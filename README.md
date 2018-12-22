@@ -30,6 +30,6 @@ $form->editor('content', '编辑器');
 ```
 
 ### 截图
-![https://github.com/airan587/alioss-form/blob/master/1.PNG]
+![](https://github.com/airan587/alioss-form/blob/master/1.PNG?raw=true)
 
 
