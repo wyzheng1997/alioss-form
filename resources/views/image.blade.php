@@ -3,8 +3,9 @@
     <div class="{{$viewClass['field']}}">
         @include('admin::form.error')
         <button type="button" class="btn btn-success" style="cursor: pointer;" id="{{$column}}_upload" data-warp='#{{$column}}_upload_warp'>上传图片</button>
-        @if(($column_val = old($column, $value))
+        @if(($column_val = old($column, $value)))
             <?php
+                $oss_url = config('alioss')['OSS_URL'];
                 $column_val = is_array($column_val) ? $column_val : explode(',', $column_val);
             ?>
             <div class="upload_warp" id="{{$column}}_upload_warp" style="opacity: 1; display: block;">
