@@ -143,6 +143,17 @@
         var element = $('#'+id);
         var upload_warp = multi ? $(element.attr('data-warp')) : element.parents('.Js_upload_warp');
         var container = $('<div style="height:0px;width:0px;display:none"></div>').appendTo(upload_warp);
+        if(multi) {
+            Sortable.create(upload_warp.get(0), {
+                group: {
+                    pull: false,
+                    put: false
+                },
+                handle: 'img',
+                ghostClass: 'upload_ghost',
+                chosenClass: 'upload_chose',
+            });
+        }
         var uploader = new plupload.Uploader({
             runtimes : 'html5,flash,silverlight,html4',
             browse_button : id,//'pickfiles',
@@ -166,15 +177,6 @@
                         if(multi) {
                             // 多图
                             upload_warp.css('opacity',1).append('<div class="upload_item" id="'+file.id+'"><canvas id="'+file.id+'_canvas" width="90px" height="90px"></canvas></div>').show();
-                            Sortable.create(upload_warp.get(0), {
-                                group: {
-                                    pull: false,
-                                    put: false
-                                },
-                                handle: 'img',
-                                ghostClass: 'upload_ghost',
-                                chosenClass: 'upload_chose',
-                            });
                         }else{
                             // 单图
                             element.hide();
