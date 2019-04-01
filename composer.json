@@ -1,5 +1,5 @@
 {
-    "name": "airan/alioss-form",
+    "name": "shenstef/alioss-form",
     "description": "laravel-admin扩展，web直传阿里OSS（file，image，editor）",
     "type": "library",
     "keywords": ["laravel-admin", "extension"],
